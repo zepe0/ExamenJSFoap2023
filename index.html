@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grup</title>
+    <script src="grup.js"></script>
+  </head>
+  <body>
+    <a href="gruplist.html">Ver Grupos</a>
+    <h3>Grups</h3>
+    <p id="exit" class="formsusc"></p>
+    <form action="" onsubmit="newGrup()">
+      <input type="text" placeholder="nom" id="nom" required />
+      <p name="error" class="hiden"></p>
+      <input type="text" placeholder="desc" id="desc" required />
+      <p name="error" class="hiden"></p>
+      <input type="url" placeholder="img" id="img" required />
+      <p name="error" class="hiden"></p>
+      <input type="text" placeholder="tag" id="tag" required />
+      <p name="error" class="hiden"></p>
+      <button>Guardar</button>
+    </form>
+    <div>
+      Grups
+      <input type="text" list="grupos" id="grupoInput" />
+      <datalist id="grupos"> </datalist>
+    </div>
+    <div>
+      Amics
+      <input type="text" list="amigos" id="Amics" />
+      <datalist id="amigos"> </datalist>
+    </div>
+  </body>
+</html>
