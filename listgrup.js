@@ -1,10 +1,26 @@
 function add(ele) {
-  console.log(ele);
+  const gruposGuardados = JSON.parse(localStorage.getItem("gruposData"));
+  const amigosGuardados = JSON.parse(localStorage.getItem("amigosData"));
+  let encontrado = false;
+
+  amigosGuardados[0].grup.forEach((grupamig) => {
+    if (grupamig.grupid === ele) {
+      encontrado = true;
+    }
+  });
+
+  if (!encontrado) {
+    amigosGuardados[0].grup.push({ grupid: gruposGuardados[ele - 1].id });
+    const amigosString = JSON.stringify(amigosGuardados);
+    localStorage.setItem("amigosData", amigosString);
+    location.reload();
+  }
 }
 function see(el) {
   const text = el.value;
-  console.log(text);
-  el.innerHTML = text;
+  debugger;
+  const parent = el.parentElement;
+  parent.innerHTML = `<p>${text}</p>`;
 }
 document.addEventListener("DOMContentLoaded", function () {
   const root = document.getElementById("root");
@@ -16,7 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
     div.setAttribute("id", `${itemgrup.id}`);
     const maxdesc = itemgrup.des.substring(0, 30);
     if (itemgrup.des.length > 30) {
-      div.innerHTML = `<p >${itemgrup.nom}</p> <p>${maxdesc} <button value=${itemgrup.des} onclick="see(this)"> + </button></p> <p>${itemgrup.img}</p><p>${itemgrup.tag}</p> <button onclick='add(${itemgrup.id})'>Suscripción</button>`;
+      div.innerHTML = `<p>${itemgrup.nom}</p> <p>${maxdesc} <button onclick="see(this)" value='${itemgrup.des}'> + </button></p> <p>${itemgrup.img}</p><p>${itemgrup.tag}</p> <button onclick="add(${itemgrup.id})">Suscripción</button>`;
+
       root.appendChild(div);
     } else {
       div.innerHTML = `<p >${itemgrup.nom}</p> <p>${itemgrup.des} </p> <p>${itemgrup.img}</p><p>${itemgrup.tag}</p> <button onclick='add(${itemgrup.id})'>Suscripción</button>`;

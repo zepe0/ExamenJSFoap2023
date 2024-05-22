@@ -1,27 +1,25 @@
-.hiden{
-    visibility: hidden;
-
+.hiden {
+  visibility: hidden;
 }
-.error{
-    color: red;
-
+.error {
+  color: red;
 }
 #root {
-
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: wrap;
 }
-body{
-   
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
+#vistagrupos {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
 }
-.grupos{
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-  
-    padding: 14px;
+.grupos {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  min-width: 150px;
+  max-width: 150px;
 }
