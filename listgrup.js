@@ -18,7 +18,7 @@ function add(ele) {
 }
 function see(el) {
   const text = el.value;
-  debugger;
+ 
   const parent = el.parentElement;
   parent.innerHTML = `<p>${text}</p>`;
 }

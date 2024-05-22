@@ -8,52 +8,66 @@
     <script src="grup.js"></script>
   </head>
   <body>
-    <a href="gruplist.html">Ver Grupos</a>
-    <h3>Grups</h3>
-    <p id="exit" class="formsusc"></p>
-    <form action="" onsubmit="newGrup()">
-      <input type="text" placeholder="nom" id="nom" required />
-      <p name="error" class="hiden"></p>
-      <input type="text" placeholder="desc" id="desc" required />
-      <p name="error" class="hiden"></p>
-      <input type="url" placeholder="img" id="img" required />
-      <p name="error" class="hiden"></p>
-
-      <div>
-        <input
-          type="checkbox"
-          id="tag1"
-          name="etiquetas"
-          value="social"
-        />social
-        <input
-          type="checkbox"
-          id="tag2"
-          name="etiquetas"
-          value="records"
-        />records
-        <input type="checkbox" id="tag" name="etiquetas" value="esport" />esport
-        <input
-          type="checkbox"
-          id="tag"
-          name="etiquetas"
-          value="naturaleza"
-        />naturaleza
-        <input type="checkbox" id="tag" name="etiquetas" value="viajes" />viajes
+    <nav><a href="gruplist.html">Ver Grupos</a></nav>
+    <div class="index">
+      <div class="grupfind">
+        <div class="findGrups">
+          Grups
+          <input type="text" list="grupos" id="grupoInput" />
+          <datalist id="grupos"> </datalist>
+        </div>
+        <div class="findAmics">
+          Amics
+          <input type="text" list="amigos" id="Amics" />
+          <datalist id="amigos"> </datalist>
+        </div>
       </div>
-
-      <p name="error" class="hiden"></p>
-      <button>Guardar</button>
-    </form>
-    <div>
-      Grups
-      <input type="text" list="grupos" id="grupoInput" />
-      <datalist id="grupos"> </datalist>
-    </div>
-    <div>
-      Amics
-      <input type="text" list="amigos" id="Amics" />
-      <datalist id="amigos"> </datalist>
+      <div class="formulario">
+        <h3>Grups</h3>
+        <p id="exit" class="formsusc"></p>
+        <form action="" onsubmit="newGrup()">
+          <input type="text" placeholder="nom" id="nom" />
+          <p name="error" class="hiden"></p>
+          <input type="text" placeholder="desc" id="desc" />
+          <p name="error" class="hiden"></p>
+          <input type="url" placeholder="img" id="img" />
+          <p name="error" class="hiden"></p>
+          <div>
+            <input
+              type="checkbox"
+              id="tag1"
+              name="etiquetas"
+              value="social"
+            />social
+            <input
+              type="checkbox"
+              id="tag2"
+              name="etiquetas"
+              value="records"
+            />records
+            <input
+              type="checkbox"
+              id="tag"
+              name="etiquetas"
+              value="esport"
+            />esport
+            <input
+              type="checkbox"
+              id="tag"
+              name="etiquetas"
+              value="naturaleza"
+            />naturaleza
+            <input
+              type="checkbox"
+              id="tag"
+              name="etiquetas"
+              value="viajes"
+            />viajes
+          </div>
+          <p name="error" class="hiden"></p>
+          <button>Guardar</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
